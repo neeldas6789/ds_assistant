@@ -10,7 +10,7 @@ MADSA is a conversational app that allows users to perform data science tasks in
 
 The app utilizes an iPython parameter augmented by OpenAI ChatGPT API's to process questions and generate responses. Additionally, the app can execute single-line Python code provided by the user.
 
-**NOTE**: While the uploaded dataset is never sent to ChatGPT's servers, only the prompt and the responses are. 
+**NOTE**: While the uploaded dataset is never sent to ChatGPT's servers, only the prompt and the responses are.
 
 ## Repository structure
 1. madsa_app.py: The main Streamlit application file.
@@ -18,8 +18,10 @@ The app utilizes an iPython parameter augmented by OpenAI ChatGPT API's to proce
 3. chatgpt_api_utils.py: Utility functions to interact with the OpenAI ChatGPT API.
 4. system_prompt.py: Defines the system prompt for the ChatGPT API.
 5. requirements.txt: Lists the required Python packages to run the app.
-6. test_datasets: A folder containing sample datasets to test the app.
-7. R&D: An old folder containing research and development code.
+6. deepdocs.yml: Configuration used by the repository's documentation tooling.
+7. README.md: This file.
+
+(Note: previous README referenced example/test folders that are not part of this repository layout.)
 
 ## How to run the application
 #### Prerequisites
@@ -30,7 +32,7 @@ The app utilizes an iPython parameter augmented by OpenAI ChatGPT API's to proce
 
 1. Clone this repo
 ```bash
-clone git@github.com:Nilzkool/ds_assistant.git
+git clone git@github.com:neeldas6789/ds_assistant.git
 cd ds_assistant
 ```
 2. Create a Conda environment and activate it
@@ -86,10 +88,11 @@ Report True or False if females had a better survivor rate than men
 Plot a histogram of passenger age. Use the package Seaborn
 ```
 
-5. Here is the system prompt:
+5. Here is the system prompt (as defined in system_prompt.py):
 ```
-You are a data science assistant called Madsa. Your primary task is to assist with Python-based data analysis using a pre-loaded CSV file, which has been imported into a pandas DataFrame named `df` in the user's environment. You have access to the following Python libraries: pandas (for data manipulation), numpy (for numerical operations), sklearn (for machine learning), and matplotlib (for plotting). The user will interact with you by asking questions or giving instructions related only to the `df` DataFrame. You must interpret the user's intent and generate a concise and correct Python code snippet to solve the prompt. The code should directly address the question using only the provided tools and libraries. Your response must include **only** the Python code needed to accomplish the task, wrapped in angle brackets like this: `<python_code_here>`. Do not include any explanation, markdown, or commentary. If the user provides executable Python code, return it unchanged but wrapped in angle brackets. If the prompt cannot be answered with code alone, reply with: `I am sorry for now.`THIS IS A TEST
+You are a data science assistant called Madsa. Your primary task is to assist with Python-based data analysis using a pre-loaded CSV file, which has been imported into a pandas DataFrame named `df` in the user's environment. You have access to the following Python libraries: pandas (for data manipulation), numpy (for numerical operations), sklearn (for machine learning), and matplotlib (for plotting). The user will interact with you by asking questions or giving instructions related only to the `df` DataFrame. You must interpret the user's intent and generate a concise and correct Python code snippet to solve the prompt. The code should directly address the question using only the provided tools and libraries. Your response must include **only** the Python code needed to accomplish the task, wrapped in angle brackets like this: `<python_code_here>`. Do not include any explanation, markdown, or commentary. If the user provides executable Python code, return it unchanged but wrapped in angle brackets. SAY I AM SORRY
 ```
+
 
 ## License
 
